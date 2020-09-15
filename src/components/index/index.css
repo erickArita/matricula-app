@@ -1,0 +1,134 @@
+:root {
+    --font-titulo: 'Raleway', sans-serif;
+    --font-parrafo: 'Open Sans', sans-serif;
+    --color-principal: #4363D1;
+    --color-secundario: #63D143;
+    --color-terciario: #D14363;
+    --color-boton: #3855b6;
+  }
+
+#bg{
+    min-width: 1000px;
+    height: 100vh;
+
+}
+#input-login{
+    width: 30%;
+}
+
+/* contenedor header */
+
+.header-clases{
+    background-image: linear-gradient(to right, var(--color-principal) 0%, #3184f0 100%);
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ilustracion-header{
+    background: linear-gradient(to right, var(--color-principal) 0%, #3184f0 100%);
+  
+}
+
+/* contenedor textos header */
+
+.textos-clases{
+    width: 50%;
+    color: #fff;
+    z-index: 2;
+}
+
+.textos-clases h1{
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0px 3px 5px rgba(165, 164, 164, 0.561) ;
+}
+
+.textos-clases h3{
+    font-style: italic;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* contenedor imagen header */
+
+.header-clases img{
+ width: 45%;
+ z-index: 2;
+}
+
+
+/* subtitulo clases */
+
+.subtitulo{
+    padding: 40px;
+    margin: 40px 0 40px 0;
+    font-size: 50px;
+    text-align: center;
+}
+
+/* respomsive */
+
+@media screen and (max-width:1180px){
+
+    .textos-clases h1{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .textos-clases{
+       width: 90%;
+    }
+
+    .subtitulo{
+        font-size: 40px;
+    }
+
+    .ilustracion-header{
+        margin-bottom: 100px;
+    }
+
+    .header-clases img{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:470px){
+    .textos-clases{
+       width: 95%;
+    }
+    .textos-clases h1{
+        font-size: 30px;
+     }
+     
+
+     .textos-clases h3{
+        font-size: 18px;
+     }
+     
+     .header-clases img{
+         width: 70%;
+     }
+     .subtitulo{
+        font-size: 35px;
+    }
+     
+ 
+}
+@media screen and (max-width:350px){
+
+    .textos-clases h1{
+        font-size: 25px;
+     }   
+ 
+}
+
+
+
+

@@ -1,0 +1,98 @@
+/* contenedor del logo */
+.logo-principal {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 100%;
+}
+
+/* logo del colegio */
+
+.logo-principal img {
+  width: 25px;
+  margin: 10px 0px 0px 12px;
+}
+
+/* navbar */
+
+#navbar {
+  justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    var(--color-principal) 0%,
+    #3184f0 100%
+  );
+  display: flex;
+  justify-content: space-between;
+}
+
+.activeClick {
+  color: rgb(95, 91, 91);
+  border-bottom: 1px solid rgba(12, 11, 11, 0.416);
+}
+
+#navbar li a {
+  color: rgb(236, 236, 236);
+  font-family: var(--font-parrafo);
+}
+
+/* navbar right */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.navbar-right i {
+  font-size: 25px;
+  color: rgb(235, 233, 233);
+  font-weight: 100;
+  padding-right: 30px;
+}
+.navbar-right i:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+.perfil-usuario.dropleft {
+  width: 50px;
+  height: 50px;
+}
+/* foto de perfil del usuario */
+
+.perfil-usuario.dropleft .dropdown-toggle {
+  width: 100%;
+  border-radius: 100%;
+}
+/* estlos de los links del menu de perfil */
+
+/* responsive */
+
+@media screen and (max-width: 767px) {
+  .navbar-right {
+    justify-content: flex-end;
+  }
+  .perfil-usuario.dropleft {
+    width: 60px;
+    height: 60px;
+  }
+  /* contenedor del logo */
+  .logo-principal {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* logo del colegio */
+
+  .logo-principal img {
+    width: 35px;
+    margin: 10px 0px 0px 12px;
+  }
+  #navbar li a {
+    font-size: 18px;
+  }
+  #navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.204);
+  }
+}
