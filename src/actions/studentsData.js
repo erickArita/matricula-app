@@ -13,6 +13,7 @@ export const startgetStudents = (filter = 'grado',value = '7') => {
             .then((querySnapshop) => {
                 const students = querySnapshop.docs.map(data => data.data())
                 dispatch(getStudents(students))
+                console.log(students)
             });
     }
 

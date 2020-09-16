@@ -17,20 +17,25 @@ export const Matricularme = () => {
         const [objectState] = state.map(i => i.state)
 
 
-        console.log(objectState)
-        if (objectState !== undefined) {
+         if (objectState !== undefined) {
             if (objectState.grado < 10) {
 
 
-                db.collection('students').doc().set({ ...objectState, date, modalidad: 'Básica' })
+                db.collection('students').doc().set({ ...objectState, date: `${date}`, modalidad: 'Básica' }).then(
+
+                    Swal.fire({ icon: 'success', title: 'Verificaremos tus datos', text: 'Recivirás un correo si eres aceptado' })
+                )
             } else if (objectState.grado == 10) {
 
-                db.collection('students').doc().set({ ...objectState, date, modalidad: 'Año de fundamento' })
+                db.collection('students').doc().set({ ...objectState, date: `${date}`, modalidad: 'Año de fundamento' }).then(
+
+                    Swal.fire({ icon: 'success', title: 'Verificaremos tus datos', text: 'Recivirás un correo si eres aceptado' })
+                )
 
             } else {
 
-                db.collection('students').doc().set({ ...objectState, date }).then(
-                    Swal.fire({icon: 'success',title:'Verificaremos tus datos',text:'Recivirás un correo si eres aceptado'})
+                db.collection('students').doc().set({ ...objectState, date: `${date}` }).then(
+                    Swal.fire({ icon: 'success', title: 'Verificaremos tus datos', text: 'Recivirás un correo si eres aceptado' })
                 )
             }
         }

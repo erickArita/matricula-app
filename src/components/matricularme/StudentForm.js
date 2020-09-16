@@ -1,7 +1,6 @@
 import React from 'react'
 import { useForm } from '../../hooks/useForm'
 import DatePicker from "react-datepicker";
-import validator from 'validator'
 import './form.css'
 import "react-datepicker/dist/react-datepicker.css";
 import { UploadFile } from './UploadFile';
@@ -10,7 +9,7 @@ export const StudentForm = ({ handleAdd }) => {
 
     console.log('montado')
 
-    const [studentData, handleInputChange, handleDateChange, handleinputFile, reset ] = useForm({
+    const [studentData, handleInputChange, handleDateChange, handleinputFile, reset] = useForm({
         name: '',
         email: '',
         localidad: '',
@@ -36,15 +35,15 @@ export const StudentForm = ({ handleAdd }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
 
-            handleAdd(studentData)
-            reset()
-        
+
+        handleAdd(studentData)
+        reset()
+
 
     };
 
-   
+
 
     return (
         <div className="container">
@@ -109,7 +108,7 @@ export const StudentForm = ({ handleAdd }) => {
 
                         <div className="form-group col-md-3">
                             <label htmlFor="grado">Modalidad</label>
-                            <select name='modalidad'  
+                            <select name='modalidad'
                                 onChange={handleInputChange} value={modalidad} className="form-control">
 
 
