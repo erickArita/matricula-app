@@ -17,24 +17,24 @@ export const Matricularme = () => {
         const [objectState] = state.map(i => i.state)
 
 
-         if (objectState !== undefined) {
+        if (objectState !== undefined) {
             if (objectState.grado < 10) {
 
 
-                db.collection('students').doc().set({ ...objectState, date: `${date}`, modalidad: 'Básica' }).then(
+                db.collection('students').doc().set({ ...objectState, date: `${date}`, modalidad: 'Básica', registered: false }).then(
 
                     Swal.fire({ icon: 'success', title: 'Verificaremos tus datos', text: 'Recivirás un correo si eres aceptado' })
                 )
-            } else if (objectState.grado == 10) {
+            } else if (objectState.grado === 10) {
 
-                db.collection('students').doc().set({ ...objectState, date: `${date}`, modalidad: 'Año de fundamento' }).then(
+                db.collection('students').doc().set({ ...objectState, date: `${date}`, modalidad: 'Año de fundamento', registered: false }).then(
 
                     Swal.fire({ icon: 'success', title: 'Verificaremos tus datos', text: 'Recivirás un correo si eres aceptado' })
                 )
 
             } else {
 
-                db.collection('students').doc().set({ ...objectState, date: `${date}` }).then(
+                db.collection('students').doc().set({ ...objectState, date: `${date}`, registered: false }).then(
                     Swal.fire({ icon: 'success', title: 'Verificaremos tus datos', text: 'Recivirás un correo si eres aceptado' })
                 )
             }
@@ -42,8 +42,6 @@ export const Matricularme = () => {
 
 
     }, [state])
-
-
 
     const handleAdd = (newStudent) => {
         const action = {

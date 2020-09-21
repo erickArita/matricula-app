@@ -15,6 +15,7 @@ export const types = {
     //  students data
 
     getStudents:'[get] Get Students',
-    getStudentByGrado:'[get] Get Student',
-    setStudentRegistered:'[set] Set Students',
+    setLoading:'[loading] Set Loading',
+
+    unsetLoading:'[loading] Unset Loading'
 }

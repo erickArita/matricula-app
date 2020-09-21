@@ -5,7 +5,7 @@ import { Index } from '../index/Index'
 import { Navbar } from './Navbar'
 import { Matricularme } from '../matricularme/Matricularme'
 import { LoginManager } from '../ManageStudents/LoginManager'
- import { auth } from '../../firebase/firebaseConfig'
+import { auth } from '../../firebase/firebaseConfig'
 import { login } from '../../actions/auth'
 import { useState } from 'react'
 import { ManageStudents } from '../ManageStudents/ManageStudents'
@@ -32,7 +32,14 @@ export const AppRouter = () => {
     }, [dispatch, setCheking])
 
     if (cheking) {
-        return (<Loading />)
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{height:'100vh'}}>
+
+                <Loading />
+
+            </div>
+
+        )
     }
     return (
         <div>
@@ -48,7 +55,7 @@ export const AppRouter = () => {
 
                         <PrivateRoutes exact isAutenticated={loggedIn} path='/manage' component={ManageStudents} />
                         <PrivateRoutes exact isAutenticated={loggedIn} path='/createAcount' component={CreateUser} />
-                      
+
 
                     </Switch>
                 </div>

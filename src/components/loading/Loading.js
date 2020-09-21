@@ -2,7 +2,7 @@ import React from 'react'
 import Loader from 'react-loader-spinner'
 export const Loading = () => {
     return (
-        <div className="  d-flex justify-content-center align-items-center" style={{height:'100vh'}}>
+      
 
             <Loader
                 type="Puff"
@@ -13,6 +13,6 @@ export const Loading = () => {
 
             />
 
-        </div>
+        
     )
 }

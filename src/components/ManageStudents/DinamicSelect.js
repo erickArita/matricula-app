@@ -1,9 +1,7 @@
 import React from 'react'
 import { useMemo } from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
-
-export const DinamicSelect = ({ filter,value }) => {
+ 
+export const DinamicSelect = ({ filter }) => {
     const grados = [
         {
             id: 1,
@@ -30,6 +28,14 @@ export const DinamicSelect = ({ filter,value }) => {
     ]
     const modalidad = [
         {
+            id: 4,
+            value: 'Básica'
+        }, 
+        {
+            id: 6,
+            value: 'Año de fundamento'
+        }, 
+        {
             id: 1,
             value: 'BTPCH'
         }, {
@@ -40,25 +46,22 @@ export const DinamicSelect = ({ filter,value }) => {
             value: 'BTPI'
         }
     ]
-    const yearNow = new Date().getFullYear();
+    
+    const ano =useMemo( () => {
+        const ano = []
+        const yearNow = new Date().getFullYear();
 
-    const ano = []
-
-    const calcYears = (yearNow) => {
-
-        for (let i = 2015; i <= yearNow; i++) {
+        for (let i = 2020; i <= yearNow; i++) {
 
 
             ano.push(i)
         }
-    }
-
-
-    useMemo(() => calcYears(yearNow), [filter,value])
+        return ano
+    }, [])
 
    
     
-    if (filter === 'grado') {
+    if (filter === 'Grado') {
 
         return grados.map(option =>
 
@@ -67,7 +70,7 @@ export const DinamicSelect = ({ filter,value }) => {
             </option>
         )
     }
-    if (filter === 'date') {
+    if (filter === 'Año') {
 
         return ano.map(option =>
             
@@ -76,7 +79,7 @@ export const DinamicSelect = ({ filter,value }) => {
             </option>
         )
     }
-    if (filter === 'modalidad') {
+    if (filter === 'Modalidad') {
 
         return modalidad.map(option =>
             <option key={option.id} >
