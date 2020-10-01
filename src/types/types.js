@@ -1,21 +1,30 @@
 export const types = {
-    login:'[auth] login',
-    logout:'[auth] logout',
+    login: '[auth] login',
+    logout: '[auth] logout',
 
     // user creation
 
-    uiSetError:'[UI] Set Error',
-    uiRemoveError:'[UI] Set Remove Error',
+    uiSetError: '[UI] Set Error',
+    uiRemoveError: '[UI] Set Remove Error',
 
     // loading while login user
 
-    uiStartLoading:'[UI] Start Loading',
-    uiFinishLoading:'[UI] Finish Loading',
+    uiStartLoading: '[UI] Start Loading',
+    uiFinishLoading: '[UI] Finish Loading',
+
+
+    // set filters
+
+    setFilters: '[set] Set Filters',
+    updateFilters: '[update] Update Filters'
+    ,
 
     //  students data
+    getStudents: '[get] Get Students',
+    updateStudent: '[update] Update Student Registered',
+    setLoading: '[loading] Set Loading',
+    unsetLoading: '[loading] Unset Loading',
 
-    getStudents:'[get] Get Students',
-    setLoading:'[loading] Set Loading',
 
-    unsetLoading:'[loading] Unset Loading'
+
 }

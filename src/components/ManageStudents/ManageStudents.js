@@ -1,49 +1,55 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useState } from 'react'
 import { FilterGetStudents } from './FilterGetStudents'
-import { startgetStudents } from '../../actions/studentsData'
 import { useDispatch, useSelector } from 'react-redux'
-import validator from 'validator'
 import { RowsStudents } from './RowsStudents'
 import { Loading } from '../loading/Loading'
 import { StudentFullData } from './StudentFullData'
-
+import validator from 'validator'
+import { startgetStudents} from '../../actions/studentsData'
+ 
 export const ManageStudents = () => {
+ 
     const dispatch = useDispatch()
     const { students, loading } = useSelector(state => state.students)
-    const [showFilter, setShowFilter] = useState(false)
+    const [showFilter, setShowFilter] = useState(true)
 
     const handleFilter = () => {
         setShowFilter(!showFilter)
     }
+    const filters = useSelector(state => state.filters)
+    const { grado,
+        date,
+        modalidad,
+        registered } = filters
+    const validateFilters = useCallback(() => {
 
-    const [filters, setFilters] = useState({
-        grado: '',
-        date: '',
-        modalidad: ''
-    });
+        if (validator.isEmpty(date) || validator.isEmpty(grado) ||
+            validator.isEmpty(modalidad)) {
+            return false;
+        } else if (
+            validator.equals(date, 'Seleccione') ||
+            validator.equals(grado, 'Seleccione') ||
+            validator.equals(modalidad, 'Seleccione')) {
 
-    const { grado, modalidad, date } = filters
+            return false
+
+        } 
+
+        return true
+
+    }, [date, grado, modalidad])
 
     useEffect(() => {
-        const validateFilters = () => {
-            if (validator.isEmpty(date) || validator.isEmpty(grado) ||
-                validator.isEmpty(modalidad)) {
-                return false;
-            } else if (validator.equals(date, 'Seleccione') ||
-                validator.equals(grado, 'Seleccione') ||
-                validator.equals(modalidad, 'Seleccione')) {
-                return false;
-            }
-            return true
-        }
         if (validateFilters()) {
 
-            console.log('enviado')
-            dispatch(startgetStudents(date, grado, modalidad))
+
+            dispatch(startgetStudents(date, grado, modalidad, registered))
         }
 
-    }, [filters, dispatch, date, grado, modalidad])
+    }, [dispatch, validateFilters, date, grado, modalidad, registered])
+
+
     const [fullDataPanel, setFullDataPanel] = useState({})
 
     const handleStudentData = (id) => {
@@ -51,27 +57,20 @@ export const ManageStudents = () => {
         const studentById = students.find(student => student.id === id)
         setFullDataPanel(studentById)
     }
-  
+
     return (
 
         <div className='container-fluid  ' style={{ height: '100vh' }} >
             <div >
-                <h3 className='text-center '>Gestión de matricula</h3>
+                <h3 className='text-center align-middle'>Gestión de matricula</h3>
                 <button className='btn btn-primary' onClick={handleFilter} >Filtros</button>
                 <hr />
             </div>
             <div className=" row  h-100">
-
-
                 {
                     showFilter &&
-
-
-                    <FilterGetStudents setFilters={setFilters} filters={{ ...filters }} />
-
-
+                    <FilterGetStudents dispatch={dispatch} />
                 }
-
                 <div className="col">
                     <table className='table table-striped '>
                         <thead>
@@ -84,18 +83,18 @@ export const ManageStudents = () => {
                             </tr>
                         </thead>
 
-
                         <tbody>
 
                             {
                                 students?.length >= 1 &&
                                 students.map(({
                                     name, numIdentidad,
-                                    grado, id }, i) => (
+                                    grado, id, registered }, i) => (
                                         <RowsStudents
                                             key={id}
                                             handleStudentData={handleStudentData}
                                             name={name}
+                                            registered={registered}
                                             numIdentidad={numIdentidad}
                                             grado={grado}
                                             id={id}
@@ -109,15 +108,12 @@ export const ManageStudents = () => {
                         loading &&
 
                         (
-
                             <div className="d-flex justify-content-center align-items-center"
                                 style={{ position: 'absolute', height: '250px', width: '500px' }}>
 
                                 <Loading />
                             </div>
-
                         )
-
                     }
                 </div>
                 <div className="col">

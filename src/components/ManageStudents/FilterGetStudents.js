@@ -1,9 +1,17 @@
 import React from 'react'
- 
+import { useSelector } from 'react-redux'
+import { updatefilters } from '../../actions/studentsData'
+
 import { DinamicFIlter } from './DinamicFIlter'
 
-export const FilterGetStudents = ({setFilters,grado,date,modalidad}) => {
+export const FilterGetStudents = React.memo(({ dispatch }) => {
 
+
+    const filters = useSelector(state => state.filters)
+    const { grado,
+        date,
+        modalidad,
+        registered } = filters
     const filtersObj = [
         {
             filter: 'Año',
@@ -19,24 +27,28 @@ export const FilterGetStudents = ({setFilters,grado,date,modalidad}) => {
             filter: 'Grado',
             value: grado,
             name: 'grado'
+        },
+        {
+            filter: 'Matriculado',
+            value: registered,
+            name: 'registered'
         }
     ]
-
-    
-    
     const handleInputChange = ({ target }) => {
-        setFilters(filters=>({
-            ...filters,
-            [target.name]: target.value
-        }))
+        dispatch(updatefilters({ ...filters, [target.name]: target.value }))
     }
+
+
+
+
+
     // generage select dropdown option list dinamic
     return (
         <div className='col-sm-2'>
-            
+
             <h4 className='mt-1'>Filtrar alumnos según:</h4>
 
-           
+
             <form className='d-flex justify-content-start'>
 
                 <div className='row-cols-3'>
@@ -53,3 +65,4 @@ export const FilterGetStudents = ({setFilters,grado,date,modalidad}) => {
         </div>
     )
 }
+)

@@ -13,6 +13,7 @@ import { PrivateRoutes } from './PrivateRoutes'
 import { PublicRoutes } from './PublicRoute'
 import { CreateUser } from '../ManageStudents/CreateUser'
 import { Loading } from '../loading/Loading'
+import { setFiltersContext } from '../../actions/studentsData'
 export const AppRouter = () => {
     const [cheking, setCheking] = useState(true)
     const [loggedIn, setLoggedIn] = useState(false)
@@ -30,10 +31,17 @@ export const AppRouter = () => {
 
         });
     }, [dispatch, setCheking])
+// setea los filtros al pricipio 
+    useEffect(() => {
+
+        dispatch(setFiltersContext())
+
+    }, [dispatch])
+    
 
     if (cheking) {
         return (
-            <div className="d-flex justify-content-center align-items-center" style={{height:'100vh'}}>
+            <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
 
                 <Loading />
 
@@ -41,6 +49,8 @@ export const AppRouter = () => {
 
         )
     }
+
+    
     return (
         <div>
             <Router>

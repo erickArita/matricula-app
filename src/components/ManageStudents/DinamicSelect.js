@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMemo } from 'react'
- 
+
 export const DinamicSelect = ({ filter }) => {
     const grados = [
         {
@@ -30,11 +30,11 @@ export const DinamicSelect = ({ filter }) => {
         {
             id: 4,
             value: 'Básica'
-        }, 
+        },
         {
             id: 6,
             value: 'Año de fundamento'
-        }, 
+        },
         {
             id: 1,
             value: 'BTPCH'
@@ -46,8 +46,18 @@ export const DinamicSelect = ({ filter }) => {
             value: 'BTPI'
         }
     ]
-    
-    const ano =useMemo( () => {
+    const registered = [
+        {
+            id: 1,
+            value: false
+        },
+        {
+            id: 2,
+            value: true
+        }
+    ]
+
+    const ano = useMemo(() => {
         const ano = []
         const yearNow = new Date().getFullYear();
 
@@ -59,8 +69,8 @@ export const DinamicSelect = ({ filter }) => {
         return ano
     }, [])
 
-   
-    
+
+
     if (filter === 'Grado') {
 
         return grados.map(option =>
@@ -73,7 +83,7 @@ export const DinamicSelect = ({ filter }) => {
     if (filter === 'Año') {
 
         return ano.map(option =>
-            
+
             <option value={option} key={option} >
                 {option}
             </option>
@@ -87,7 +97,14 @@ export const DinamicSelect = ({ filter }) => {
             </option>
         )
     }
+    if (filter === 'Matriculado') {
+        return registered.map(option =>
+        <option  value={option.value} key={option.id} >
+                {option.value ? 'Si' : 'No'}
+            </option>
+        )
 
+    }
 
 
 
