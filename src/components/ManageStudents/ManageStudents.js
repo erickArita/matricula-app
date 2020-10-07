@@ -6,10 +6,11 @@ import { RowsStudents } from './RowsStudents'
 import { Loading } from '../loading/Loading'
 import { StudentFullData } from './StudentFullData'
 import validator from 'validator'
-import { startgetStudents} from '../../actions/studentsData'
+import { startgetStudents } from '../../actions/studentsData'
+import { PdfButton } from '../../hooks/useCreatePdf'
  
 export const ManageStudents = () => {
- 
+
     const dispatch = useDispatch()
     const { students, loading } = useSelector(state => state.students)
     const [showFilter, setShowFilter] = useState(true)
@@ -34,7 +35,7 @@ export const ManageStudents = () => {
 
             return false
 
-        } 
+        }
 
         return true
 
@@ -58,11 +59,13 @@ export const ManageStudents = () => {
         setFullDataPanel(studentById)
     }
 
+    
     return (
 
         <div className='container-fluid  ' style={{ height: '100vh' }} >
             <div >
                 <h3 className='text-center align-middle'>Gestión de matricula</h3>
+                <PdfButton/>
                 <button className='btn btn-primary' onClick={handleFilter} >Filtros</button>
                 <hr />
             </div>
