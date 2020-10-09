@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware,compose  } from 'redux';
  
 import thunk from 'redux-thunk'
 import { AuthReducer } from '../reducers/AuthReducer';
+import { createPdf } from '../reducers/createPdf';
 import { filterGetData } from '../reducers/filterGetData';
 import { studentsReducer } from '../reducers/studentsReducer';
 import { uiReducer } from '../reducers/uiReducer';
@@ -11,7 +12,8 @@ const reducers = combineReducers({
     auth: AuthReducer,
     ui:uiReducer,
     students:studentsReducer,
-    filters:filterGetData
+    filters:filterGetData,
+    createPdf:createPdf
 })
 // para usar el reducer y usar el middleware para codigo asincrono
 export const store = createStore(reducers,

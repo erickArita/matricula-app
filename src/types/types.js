@@ -26,5 +26,8 @@ export const types = {
     unsetLoading: '[loading] Unset Loading',
 
 
-
+    // create pdf
+    setCreatePdf:'[set] Set CreatePdf',
+    unSetCreatePdf:'[set] Set CreatePdf',
+    createPdf:'[create] Create Pdf'
 }

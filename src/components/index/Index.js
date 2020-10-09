@@ -6,7 +6,7 @@ export const Index = () => {
         <>
             <header className='header-clases flex'>
                 <div className="textos-clases">
-                    <h1>Instituto Gubernamental Superación Cashapa</h1>
+                    <h1>Centro De Educación Media Gubernamental <br/> "Superación Cashapa"</h1>
                     <h3>Plataforma de Matrícula</h3>
                 </div>
                 <img src={principalIllustration} alt="nbb" />

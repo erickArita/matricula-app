@@ -7,8 +7,9 @@ import { Loading } from '../loading/Loading'
 import { StudentFullData } from './StudentFullData'
 import validator from 'validator'
 import { startgetStudents } from '../../actions/studentsData'
-import { PdfButton } from '../../hooks/useCreatePdf'
- 
+import { ButonCreatePdf } from './ButonCreatePdf'
+
+
 export const ManageStudents = () => {
 
     const dispatch = useDispatch()
@@ -59,14 +60,16 @@ export const ManageStudents = () => {
         setFullDataPanel(studentById)
     }
 
-    
+
     return (
 
         <div className='container-fluid  ' style={{ height: '100vh' }} >
-            <div >
+            <div className='pt-2' >
                 <h3 className='text-center align-middle'>Gestión de matricula</h3>
-                <PdfButton/>
-                <button className='btn btn-primary' onClick={handleFilter} >Filtros</button>
+                <div className="d-flex justify-content-between">
+                    <button className='btn btn-primary' onClick={handleFilter} >Filtros</button>
+                    <ButonCreatePdf/>
+                </div>
                 <hr />
             </div>
             <div className=" row  h-100">

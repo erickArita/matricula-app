@@ -11,7 +11,7 @@ export const CreateUser = () => {
 
     const dispatch = useDispatch();
     // retorna el state global
-    const { msgError,loading } = useSelector(state => state.ui)
+    const { msgError, loading } = useSelector(state => state.ui)
 
     const [formValues, handleInputChange] = useForm({
         email: '',
@@ -46,7 +46,8 @@ export const CreateUser = () => {
         <div className='container-login'>
             <div className="textos-login">
 
-                <h1>Institulo Gubernamental Superación Cashapa</h1>
+                <h1>Centro De Educación Media Gubernamental <br />
+                    "Superación Cashapa"</h1>
                 <p>Educamos para transformar</p>
                 <img src={imgLogin} alt='logo instituto' />
             </div>
