@@ -7,8 +7,7 @@ import { UploadFile } from './UploadFile';
 
 export const StudentForm = ({ handleAdd }) => {
 
-    console.log('montado')
-
+ 
     const [studentData, handleInputChange, handleDateChange, handleinputFile, reset] = useForm({
         name: '',
         email: '',

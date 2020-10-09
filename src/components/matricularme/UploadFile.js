@@ -4,8 +4,7 @@ import { uploadFile } from '../../helers/uploadFile'
 
 export const UploadFile = React.memo(({  handleinputFile }) => {
 
-    console.log('renderizando ')
-
+ 
     const handleFile = ({target}) => {
 
         uploadFile(target.files[0], handleinputFile)

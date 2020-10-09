@@ -16,8 +16,7 @@ export const filterGetData = (state = {}, action) => {
         case types.updateFilters:
 
             const filter = action.payload
-            console.log(filter)
-            return {
+             return {
 
                 ...state,...filter,registered: filter.registered === 'true' ? true : false
             }

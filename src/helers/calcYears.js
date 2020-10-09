@@ -10,7 +10,6 @@ export const calclYears = (edad) => {
     const now = new Date()
 
     const oldStudent = now.getFullYear() - jsDate.getFullYear()
-    console.log(oldStudent)
-
+ 
     return oldStudent;
 }

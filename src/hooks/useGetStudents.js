@@ -10,8 +10,7 @@ export const useGetStudents = () => {
     useEffect(() => {
         getStudents().then(students => {
             
-            console.log(students)
-                
+                 
                 setData({
                     data: students,
                     loanding: false 

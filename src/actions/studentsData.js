@@ -14,8 +14,7 @@ export const startgetStudents = (date, grado, modalidad, registered) => {
         first.get()
         .then((querySnapshop) => {
             
-            console.log('s')
-                dispatch(unsetLoading())
+                 dispatch(unsetLoading())
                 const students = querySnapshop.docs.map(data => ({ ...data.data(), id: data.id }))
                 dispatch(getStudents(students))
             });
@@ -33,8 +32,7 @@ export const updateStudent = (id, registered) => {
             dispatch(updateStudentAction(registered, id))
         })
             .catch((e) => {
-                console.log(e)
-            })
+             })
     }
 }
 
