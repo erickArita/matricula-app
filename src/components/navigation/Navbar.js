@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import { startLogout } from '../../actions/auth'
-import logo from '../../assets/logo.png'
+// import logo from '../../assets/logo.png'
 import './navbar.css'
 export const Navbar = () => {
     const dispatch = useDispatch()
@@ -17,7 +17,7 @@ export const Navbar = () => {
             <div className="d-flex flex-wrap justify-content-center ">
                 <Link to='/'     className="navbar-brand  " >
                     <div className="logo-principal">
-                        <img alt="logo" src={logo} />
+                        <img alt="logo" src='../../assets/logo.png' />
                     </div>
                 </Link>
                 <Link  className='text-decoration-none d-flex align-items-center' to='/'>
