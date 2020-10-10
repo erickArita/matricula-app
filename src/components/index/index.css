@@ -66,7 +66,10 @@ p{
 
 
 /* subtitulo clases */
-
+/* sdadds */
+b{
+    border: 1;
+}
 .subtitulo{
     padding: 40px;
     margin: 40px 0 40px 0;
