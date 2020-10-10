@@ -5,8 +5,8 @@
 /.pnp
 .pnp.js
 .vscode
-./src
-./public
+/src
+/public
 # testing
 /coverage
 
