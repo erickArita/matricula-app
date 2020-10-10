@@ -13,17 +13,17 @@ export const Navbar = () => {
 
     }
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark " id="navbar">
-            <div className="row">
-                <Link to='/' className="navbar-brand col " >
-                    <div className="logo-principal ">
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark  sticky-top" id="navbar">
+            <div className="d-flex flex-wrap justify-content-center ">
+                <Link to='/'     className="navbar-brand  " >
+                    <div className="logo-principal">
                         <img alt="logo" src={logo} />
                     </div>
                 </Link>
-                <Link className='text-decoration-none' to='/'>
-                    <div className='text-dark col  pt-3  '>
+                <Link  className='text-decoration-none d-flex align-items-center' to='/'>
+                    <div className='text-dark'>
 
-                        <h4 > INSUCA MATRÍCULA</h4>
+                        <h3> INSUCA MATRÍCULA</h3>
                     </div>
 
                 </Link>

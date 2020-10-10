@@ -43,6 +43,8 @@ export const date = () => {
         case 11:
             month = 'Diciembre'
             break;
+        default:
+            month='9/10/2020 '
     }
     return { year, month, day }
 

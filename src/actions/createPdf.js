@@ -28,7 +28,7 @@ const generatePDF = (studentsAproved) => {
         putOnlyUsedFonts: true,
         floatPrecision: 16 // or "smart", default is 16
     });
-    studentsAproved.map(student => {
+    studentsAproved.forEach(student => {
 
         doc.setFontSize(20)
         doc.text(80, 60, 'CONSTANCIA DE MATRÍCULA')
@@ -47,7 +47,7 @@ Santa Rita a los ${day} del mes de ${month} del ${year}.`)
         doc.addPage()
     })
 
-    doc.save('jo.pdf')
+    doc.save('matriculados.pdf')
 }
 export const registeredStudents = (studentsAproved) => ({
     type: types.createPdf,

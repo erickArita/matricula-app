@@ -2,7 +2,7 @@
     --font-titulo: 'Raleway', sans-serif;
     --font-parrafo: 'Open Sans', sans-serif;
     --color-principal: #4363D1;
-    --color-secundario: #63D143;
+    --color-secundario: #4bb82a;
     --color-terciario: #D14363;
     --color-boton: #3855b6;
   }
@@ -15,7 +15,9 @@
 #input-login{
     width: 30%;
 }
-
+p{
+    font-family: var(--font-parrafo);
+}
 /* contenedor header */
 
 .header-clases{
@@ -71,6 +73,11 @@
     font-size: 50px;
     text-align: center;
 }
+
+section{
+    background:linear-gradient(to right,#d42f31 0%, #fa6466 100%);
+}
+
 
 /* respomsive */
 
