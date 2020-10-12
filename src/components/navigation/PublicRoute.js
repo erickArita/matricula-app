@@ -11,7 +11,7 @@ export const PublicRoutes = ({
 
             component={(props) => (
                 (isAutenticated) ?
-                    (<Redirect to='/manage' />) :
+                    (<Redirect to='/docs/manage' />) :
                     (<Component {...props} />)
             )}
 

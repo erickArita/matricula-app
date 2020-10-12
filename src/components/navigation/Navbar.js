@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import { startLogout } from '../../actions/auth'
-// import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.png'
 import './navbar.css'
 export const Navbar = () => {
     const dispatch = useDispatch()
@@ -15,9 +15,9 @@ export const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark  sticky-top" id="navbar">
             <div className="d-flex flex-wrap justify-content-center ">
-                <Link to='/'     className="navbar-brand  " >
+                <Link to='/docs'     className="navbar-brand  " >
                     <div className="logo-principal">
-                        <img alt="logo" src='../../assets/logo.png' />
+                        <img alt="logo" src={logo} />
                     </div>
                 </Link>
                 <Link  className='text-decoration-none d-flex align-items-center' to='/'>
@@ -42,23 +42,23 @@ export const Navbar = () => {
 
                     <ul className="navbar-nav pr-5  " >
                         <li className="nav-item ">
-                            <NavLink activeClassName='activeClick' exact className="nav-link" to='/' >Inicio</NavLink>
+                            <NavLink activeClassName='activeClick' exact className="nav-link" to='/docs' >Inicio</NavLink>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink activeClassName='activeClick' className="nav-link" to='/matricularme' >Matricularme</NavLink>
+                            <NavLink activeClassName='activeClick' className="nav-link" to='/docs/matricularme' >Matricularme</NavLink>
                         </li>
 
 
 
                         <li className="nav-item">
-                            <NavLink activeClassName='activeClick' className="nav-link" to='/manage' >Administrador</NavLink>
+                            <NavLink activeClassName='activeClick' className="nav-link" to='/docs/manage' >Administrador</NavLink>
                         </li>
 
                         <li className="nav-item">
                             {
                                 uid &&
-                                <NavLink activeClassName='activeClick' className="nav-link" to='/createAcount'>Crear usuario</NavLink>
+                                <NavLink activeClassName='activeClick' className="nav-link" to='/docs/createAcount'>Crear usuario</NavLink>
                             }
                         </li>
                         {

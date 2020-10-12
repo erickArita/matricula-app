@@ -8,9 +8,9 @@ export const DasboardRoutes = () => {
         <div>
             <Switch>
 
-            <Route exact path='/admin'  component={ManageStudents} />
-            <Route exact path='/create_User'   component={CreateUser} />
-            <Redirect to='/admin' />
+            <Route exact path='/docs/admin'  component={ManageStudents} />
+            <Route exact path='/docs/create_User'   component={CreateUser} />
+            <Redirect to='/docs/admin' />
             </Switch>
         </div>
     )

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Index } from '../index/Index'
 import { Navbar } from './Navbar'
@@ -58,15 +58,15 @@ export const AppRouter = () => {
                     <Navbar />
                     <Switch>
 
-                        <Route path='/' exact component={Index} />
-                        <Route path='/matricularme' exact component={Matricularme} />
+                        <Route path='/docs' exact component={Index} />
+                        <Route path='/docs/matricularme' exact component={Matricularme} />
 
-                        <PublicRoutes path='/login' exact isAutenticated={loggedIn} component={LoginManager} />
+                        <PublicRoutes path='/docs/login' exact isAutenticated={loggedIn} component={LoginManager} />
 
-                        <PrivateRoutes exact isAutenticated={loggedIn} path='/manage' component={ManageStudents} />
-                        <PrivateRoutes exact isAutenticated={loggedIn} path='/createAcount' component={CreateUser} />
+                        <PrivateRoutes exact isAutenticated={loggedIn} path='/docs/manage' component={ManageStudents} />
+                        <PrivateRoutes exact isAutenticated={loggedIn} path='/docs/createAcount' component={CreateUser} />
 
-
+                        <Redirect to='/docs' push={true} />  
                     </Switch>
                 </div>
             </Router>
