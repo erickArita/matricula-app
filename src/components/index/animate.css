@@ -1,0 +1,19 @@
+.an_upDown {
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: an_upDown;
+  animation-fill-mode: backwards;
+}
+
+@keyframes an_upDown {
+  from {
+    transform: translateY(0px) ;
+    
+  }
+  to {
+    transform: translateY(30px) ;
+    
+  }
+}

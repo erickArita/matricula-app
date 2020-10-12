@@ -14,6 +14,12 @@ import { PublicRoutes } from './PublicRoute'
 import { CreateUser } from '../ManageStudents/CreateUser'
 import { Loading } from '../loading/Loading'
 import { setFiltersContext } from '../../actions/studentsData'
+import 'bootstrap/dist/css/bootstrap.min.css'
+// eslint-disable-next-line
+import $ from 'jquery';
+// eslint-disable-next-line
+// import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 export const AppRouter = () => {
     const [cheking, setCheking] = useState(true)
     const [loggedIn, setLoggedIn] = useState(false)

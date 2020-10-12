@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.css'
+import  './animate.css'
 import { Link } from 'react-router-dom'
 import grad from '../../assets/question.svg'
 import principalIllustration from '../../assets/graduation.svg'
@@ -11,8 +12,8 @@ export const Index = () => {
                     <h1>Centro De Educación Media Gubernamental <br /> "Superación Cashapa"</h1>
                     <h3>Plataforma de Matrícula</h3>
                 </div>
-                <img src={principalIllustration} alt="nbb" />
-                <Link style={{ zIndex: '200' }} to='/docs/matricularme'>
+                <img  className='an_upDown' src={principalIllustration} alt="nbb" />
+                <Link  style={{ zIndex: '200' }} to='/docs/matricularme'>
                     <button className='btn btn-primary' >
                         MATRICULARME
                     </button>
@@ -23,7 +24,7 @@ export const Index = () => {
             <section className='vh-100 d-flex align-center'  >
                 <div className="d-flex flex-wrap flex-md-row flex-sm-column   justify-content-center justify-content-sm-center align-items-center">
 
-                    <img style={{minWidth:'300px',width:'49vw'}} src={grad} alt="" />
+                    <img className='an_upDown' style={{minWidth:'300px',width:'49vw'}} src={grad} alt="" />
                     <div style={{minWidth:'300px',height:'70vh'}} className="d-flex w-50  flex-column justify-content-center align-items-center">
 
                         <h2 className='text-body' >¿Por qué el INSUCA?</h2>
