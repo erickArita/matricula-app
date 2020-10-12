@@ -20,7 +20,7 @@ export const Navbar = () => {
                         <img alt="logo" src={logo} />
                     </div>
                 </Link>
-                <Link  className='text-decoration-none d-flex align-items-center' to='/'>
+                <Link  className='text-decoration-none d-flex align-items-center' to='/docs/'>
                     <div className='text-dark'>
 
                         <h3> INSUCA MATRÍCULA</h3>
