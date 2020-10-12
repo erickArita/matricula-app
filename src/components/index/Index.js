@@ -12,7 +12,7 @@ export const Index = () => {
                     <h3>Plataforma de Matrícula</h3>
                 </div>
                 <img src={principalIllustration} alt="nbb" />
-                <Link style={{ zIndex: '200' }} to='/matricularme'>
+                <Link style={{ zIndex: '200' }} to='/docs/matricularme'>
                     <button className='btn btn-primary' >
                         MATRICULARME
                     </button>
