@@ -15,7 +15,7 @@ export const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark  sticky-top" id="navbar">
             <div className="d-flex flex-wrap justify-content-center ">
-                <Link to='/docs'     className="navbar-brand  " >
+                <Link to='/docs/'     className="navbar-brand  " >
                     <div className="logo-principal">
                         <img alt="logo" src={logo} />
                     </div>
@@ -42,7 +42,7 @@ export const Navbar = () => {
 
                     <ul className="navbar-nav pr-5  " >
                         <li className="nav-item ">
-                            <NavLink activeClassName='activeClick' exact className="nav-link" to='/docs' >Inicio</NavLink>
+                            <NavLink activeClassName='activeClick' exact className="nav-link" to='/docs/' >Inicio</NavLink>
                         </li>
 
                         <li className="nav-item">

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Index } from '../index/Index'
 import { Navbar } from './Navbar'
@@ -24,6 +24,7 @@ export const AppRouter = () => {
     const [cheking, setCheking] = useState(true)
     const [loggedIn, setLoggedIn] = useState(false)
     const dispatch = useDispatch()
+    // const {} =useHistory()
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
 
@@ -59,20 +60,21 @@ export const AppRouter = () => {
     
     return (
         <div>
-            <Router>
+            <Router basename='/docs'>
                 <div >
                     <Navbar />
-                    <Switch>
+                    <Switch >
 
-                        <Route path='/docs' exact component={Index} />
-                        <Route path='/docs/matricularme' exact component={Matricularme} />
+                        <Route path='/' exact component={Index} />
+                        <Route path='/matricularme'   exact component={Matricularme} />
 
-                        <PublicRoutes path='/docs/login' exact isAutenticated={loggedIn} component={LoginManager} />
+                        <PublicRoutes path='/login' exact isAutenticated={loggedIn} component={LoginManager} />
 
-                        <PrivateRoutes exact isAutenticated={loggedIn} path='/docs/manage' component={ManageStudents} />
-                        <PrivateRoutes exact isAutenticated={loggedIn} path='/docs/createAcount' component={CreateUser} />
+                        <PrivateRoutes exact isAutenticated={loggedIn} path='/manage' component={ManageStudents} />
+                        <PrivateRoutes exact isAutenticated={loggedIn} path='/createAcount' component={CreateUser} />
 
-                        <Redirect to='/docs' push={true} />  
+                        <Redirect to='/' push={true} />  
+                        
                     </Switch>
                 </div>
             </Router>

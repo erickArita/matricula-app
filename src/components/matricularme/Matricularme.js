@@ -6,8 +6,6 @@ import { StudentForm } from './StudentForm'
 import { db } from '../../firebase/firebaseConfig'
 import Swal from 'sweetalert2'
 
-
-
 const date = new Date().getFullYear();
 
 export const Matricularme = () => {

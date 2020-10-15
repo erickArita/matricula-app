@@ -24,7 +24,7 @@
     "sweetalert2": "^9.17.2",
     "validator": "^13.1.1"
   },
-  "homepage": "https://erickarita.github.io/",
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
