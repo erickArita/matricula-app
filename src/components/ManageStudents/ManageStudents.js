@@ -5,8 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RowsStudents } from './RowsStudents'
 import { Loading } from '../loading/Loading'
 import { StudentFullData } from './StudentFullData'
-import validator from 'validator'
-import { startgetStudents } from '../../actions/studentsData'
+ 
 import { ButonCreatePdf } from './ButonCreatePdf'
 
 
@@ -19,37 +18,7 @@ export const ManageStudents = () => {
     const handleFilter = () => {
         setShowFilter(!showFilter)
     }
-    const filters = useSelector(state => state.filters)
-    const { grado,
-        date,
-        modalidad,
-        registered } = filters
-    const validateFilters = useCallback(() => {
-
-        if (validator.isEmpty(date) || validator.isEmpty(grado) ||
-            validator.isEmpty(modalidad)) {
-            return false;
-        } else if (
-            validator.equals(date, 'Seleccione') ||
-            validator.equals(grado, 'Seleccione') ||
-            validator.equals(modalidad, 'Seleccione')) {
-
-            return false
-
-        }
-
-        return true
-
-    }, [date, grado, modalidad])
-
-    useEffect(() => {
-        if (validateFilters()) {
-
-
-            dispatch(startgetStudents(date, grado, modalidad, registered))
-        }
-
-    }, [dispatch, validateFilters, date, grado, modalidad, registered])
+   
 
 
     const [fullDataPanel, setFullDataPanel] = useState({})
@@ -68,7 +37,7 @@ export const ManageStudents = () => {
                 <h3 className='text-center align-middle'>Gestión de matricula</h3>
                 <div className="d-flex justify-content-between">
                     <button className='btn btn-primary' onClick={handleFilter} >Filtros</button>
-                    <ButonCreatePdf/>
+                    <ButonCreatePdf />
                 </div>
                 <hr />
             </div>

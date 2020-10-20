@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Redirect, Route, Switch, useHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Index } from '../index/Index'
 import { Navbar } from './Navbar'
@@ -14,6 +14,7 @@ import { PublicRoutes } from './PublicRoute'
 import { CreateUser } from '../ManageStudents/CreateUser'
 import { Loading } from '../loading/Loading'
 import { setFiltersContext } from '../../actions/studentsData'
+import { Orientacion } from '../orientacion/Orientacion'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // eslint-disable-next-line
 import $ from 'jquery';
@@ -38,13 +39,13 @@ export const AppRouter = () => {
 
         });
     }, [dispatch, setCheking])
-// setea los filtros al pricipio 
+    // setea los filtros al pricipio 
     useEffect(() => {
 
         dispatch(setFiltersContext())
 
     }, [dispatch])
-    
+
 
     if (cheking) {
         return (
@@ -57,7 +58,7 @@ export const AppRouter = () => {
         )
     }
 
-    
+
     return (
         <div>
             <Router basename='/docs'>
@@ -66,15 +67,16 @@ export const AppRouter = () => {
                     <Switch >
 
                         <Route path='/' exact component={Index} />
-                        <Route path='/matricularme'   exact component={Matricularme} />
+                        <Route path='/matricularme' exact component={Matricularme} />
 
                         <PublicRoutes path='/login' exact isAutenticated={loggedIn} component={LoginManager} />
 
                         <PrivateRoutes exact isAutenticated={loggedIn} path='/manage' component={ManageStudents} />
+                        <PrivateRoutes exact isAutenticated={loggedIn} path='/orientation' component={Orientacion} />
                         <PrivateRoutes exact isAutenticated={loggedIn} path='/createAcount' component={CreateUser} />
 
-                        <Redirect to='/' push={true} />  
-                        
+                        <Redirect to='/' />
+
                     </Switch>
                 </div>
             </Router>

@@ -15,12 +15,12 @@ export const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark  sticky-top" id="navbar">
             <div className="d-flex flex-wrap justify-content-center ">
-                <Link to='/docs/'     className="navbar-brand  " >
+                <Link to='/' className="navbar-brand  " >
                     <div className="logo-principal">
                         <img alt="logo" src={logo} />
                     </div>
                 </Link>
-                <Link  className='text-decoration-none d-flex align-items-center' to='/docs/'>
+                <Link className='text-decoration-none d-flex align-items-center' to='/'>
                     <div className='text-dark'>
 
                         <h3> INSUCA MATRÍCULA</h3>
@@ -42,31 +42,44 @@ export const Navbar = () => {
 
                     <ul className="navbar-nav pr-5  " >
                         <li className="nav-item ">
-                            <NavLink activeClassName='activeClick' exact className="nav-link" to='/docs/' >Inicio</NavLink>
+                            <NavLink activeClassName='activeClick' exact className="nav-link" to='/' >Inicio</NavLink>
                         </li>
 
                         <li className="nav-item">
-                            <NavLink activeClassName='activeClick' className="nav-link" to='/docs/matricularme' >Matricularme</NavLink>
+                            <NavLink activeClassName='activeClick' className="nav-link" to='/matricularme' >Matricularme</NavLink>
                         </li>
 
 
 
                         <li className="nav-item">
-                            <NavLink activeClassName='activeClick' className="nav-link" to='/docs/manage' >Administrador</NavLink>
+                            <NavLink activeClassName='activeClick' className="nav-link" to='/login'>Administrador</NavLink>
                         </li>
+
 
                         <li className="nav-item">
                             {
                                 uid &&
-                                <NavLink activeClassName='activeClick' className="nav-link" to='/docs/createAcount'>Crear usuario</NavLink>
+                                <NavLink activeClassName='activeClick' className="nav-link" to='/orientation'>Orientación</NavLink>
                             }
                         </li>
                         {
-                            uid &&
-                            <li className="nav-item">
-                                <p className="nav-link" onClick={handelLogout}> Cerrar Secion</p>
-                            </li>
+                            uid && 
+                            <li className="nav-item dropdown">
+                                <NavLink className="nav-link dropdown-toggle" to='#' id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Usuario
+                            </NavLink>
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+ 
 
+                                        <NavLink className="nav-link text-body" to='/createAcount'>Crear usuario</NavLink>
+
+ 
+                                         <NavLink to='#' className="nav-link text-body pointer" onClick={handelLogout}> Cerrar Secion</NavLink >
+ 
+
+
+                                </div>
+                            </li>
                         }
                     </ul>
 

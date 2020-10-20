@@ -12,8 +12,8 @@ export const Index = () => {
                     <h1>Centro De Educación Media Gubernamental <br /> "Superación Cashapa"</h1>
                     <h3>Plataforma de Matrícula</h3>
                 </div>
-                <img  className='an_upDown' src={principalIllustration} alt="nbb" />
-                <Link  style={{ zIndex: '200' }} to='/docs/matricularme'>
+                <img  className='an_upDown' src={principalIllustration} alt="Ilustracion graduados" />
+                <Link  style={{ zIndex: '200' }} to='/matricularme'>
                     <button className='btn btn-primary' >
                         MATRICULARME
                     </button>

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { updatefilters } from '../../actions/studentsData'
+import validator from 'validator'
+import { startgetStudents, updatefilters } from '../../actions/studentsData'
 
 import { DinamicFIlter } from './DinamicFIlter'
 
@@ -39,6 +40,32 @@ export const FilterGetStudents = React.memo(({ dispatch }) => {
     }
 
 
+    const validateFilters = useCallback(() => {
+
+        if (validator.isEmpty(date) || validator.isEmpty(grado) ||
+            validator.isEmpty(modalidad)) {
+            return false;
+        } else if (
+            validator.equals(date, 'Seleccione') ||
+            validator.equals(grado, 'Seleccione') ||
+            validator.equals(modalidad, 'Seleccione')) {
+
+            return false
+
+        }
+
+        return true
+
+    }, [date, grado, modalidad])
+
+    useEffect(() => {
+        if (validateFilters()) {
+
+
+            dispatch(startgetStudents(date, grado, modalidad, registered))
+        }
+
+    }, [dispatch, validateFilters, date, grado, modalidad, registered])
 
 
 
