@@ -29,5 +29,9 @@ export const types = {
     // create pdf
     setCreatePdf:'[set] Set CreatePdf',
     unSetCreatePdf:'[set] Set CreatePdf',
-    createPdf:'[create] Create Pdf'
+    createPdf:'[create] Create Pdf',
+
+    // student auth notes
+    loginStudent: '[auth] loginStudent',
+    logoutStudent: '[auth] logoutStudent'
 }

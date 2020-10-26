@@ -19,8 +19,6 @@ export const ManageStudents = () => {
         setShowFilter(!showFilter)
     }
    
-
-
     const [fullDataPanel, setFullDataPanel] = useState({})
 
     const handleStudentData = (id) => {
@@ -28,7 +26,6 @@ export const ManageStudents = () => {
         const studentById = students.find(student => student.id === id)
         setFullDataPanel(studentById)
     }
-
 
     return (
 

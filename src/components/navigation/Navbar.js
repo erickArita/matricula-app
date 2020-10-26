@@ -1,16 +1,17 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
-import { startLogout } from '../../actions/auth'
+import { logoutStudent, startLogout } from '../../actions/auth'
 import logo from '../../assets/logo.png'
 import './navbar.css'
 export const Navbar = () => {
     const dispatch = useDispatch()
     const { uid } = useSelector(state => state.auth)
+    const idStudent = useSelector(state => state.studentAuth)
     const handelLogout = () => {
 
         dispatch(startLogout())
-
+        dispatch(logoutStudent())
     }
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark  sticky-top" id="navbar">
@@ -56,12 +57,7 @@ export const Navbar = () => {
                         </li>
 
 
-                        <li className="nav-item">
-                            {
-                                uid &&
-                                <NavLink activeClassName='activeClick' className="nav-link" to='/orientation'>Orientación</NavLink>
-                            }
-                        </li>
+                       
                         {
                             uid && 
                             <li className="nav-item dropdown">
@@ -81,6 +77,12 @@ export const Navbar = () => {
                                 </div>
                             </li>
                         }
+                         <li className="nav-item">
+                            
+                              
+                                <NavLink activeClassName='activeClick' className="nav-link" to={idStudent?.uid? '/tasks':'/tasks-login'}>Anotaciones</NavLink>
+                            
+                        </li>
                     </ul>
 
                 </div>

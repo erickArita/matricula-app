@@ -2,7 +2,9 @@ import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 
 export const PublicRoutes = ({
+
     isAutenticated,
+    next,
     component: Component,
     ...rest
 }) => {
@@ -11,7 +13,7 @@ export const PublicRoutes = ({
 
             component={(props) => (
                 (isAutenticated) ?
-                    (<Redirect to='/manage' />) :
+                    (<Redirect to= { next ||'/manage'} />) :
                     (<Component {...props} />)
             )}
 
