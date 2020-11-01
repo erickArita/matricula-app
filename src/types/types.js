@@ -33,5 +33,13 @@ export const types = {
 
     // student auth notes
     loginStudent: '[auth] loginStudent',
-    logoutStudent: '[auth] logoutStudent'
+    logoutStudent: '[auth] logoutStudent',
+
+    // 
+
+    createTask:'[Task] createTask' ,
+    getTasks:'[get] tasks',
+    deleteTask:'[del] deleteTask',
+    completeTask:'[completa] completeTask',
+    updateTask:'[upd] updateTask'
 }

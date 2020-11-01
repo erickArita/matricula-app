@@ -6,7 +6,7 @@ import { Navbar } from './Navbar'
 import { Matricularme } from '../matricularme/Matricularme'
 import { LoginManager } from '../ManageStudents/LoginManager'
 import { auth } from '../../firebase/firebaseConfig'
-import { login, loginStudentTasks } from '../../actions/auth'
+import { login } from '../../actions/auth'
 import { useState } from 'react'
 import { ManageStudents } from '../ManageStudents/ManageStudents'
 import { PrivateRoutes } from './PrivateRoutes'
@@ -28,12 +28,13 @@ export const AppRouter = () => {
     const studentAuth = useSelector(state => state.studentAuth)
     const dispatch = useDispatch()
     useEffect(() => {
+
         auth.onAuthStateChanged((user) => {
             if (user?.uid && user?.emailVerified === false) {
                 dispatch(login(user.uid, user.displayName))
                 setLoggedIn(true)
 
-            } else {
+            } else {    
                 setLoggedIn(false)
 
             }
@@ -75,7 +76,6 @@ export const AppRouter = () => {
 
         )
     }
-
 
     return (
         <div>

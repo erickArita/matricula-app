@@ -7,14 +7,14 @@ export const startgetStudents = (date, grado, modalidad, registered) => {
     return (dispatch) => {
         dispatch(setLoading())
         const first = db.collection("students")
-        .where('grado', '==', grado)
-        .where('date', '==', date)
-        .where('modalidad', '==', modalidad)
-        .where('registered', '==', registered)
+            .where('grado', '==', grado)
+            .where('date', '==', date)
+            .where('modalidad', '==', modalidad)
+            .where('registered', '==', registered)
         first.get()
-        .then((querySnapshop) => {
-            
-                 dispatch(unsetLoading())
+            .then((querySnapshop) => {
+
+                dispatch(unsetLoading())
                 const students = querySnapshop.docs.map(data => ({ ...data.data(), id: data.id }))
                 dispatch(getStudents(students))
             });
@@ -32,7 +32,8 @@ export const updateStudent = (id, registered) => {
             dispatch(updateStudentAction(registered, id))
         })
             .catch((e) => {
-             })
+
+            })
     }
 }
 
