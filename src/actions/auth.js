@@ -64,7 +64,7 @@ export const logout = () => ({
 export const startLoginWithGoogle = () => {
     return (dispatch) => {
         auth.signInWithPopup(googleProvider)
-            .then(({ user }) => {
+            .then( ({ user }) => {
                 dispatch(loginStudentTasks(user.uid, user.displayName))
             })
 

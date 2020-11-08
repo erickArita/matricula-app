@@ -1,23 +1,30 @@
 import { types } from "../types/types";
 
-
 export const taskReducer = (state = {}, action) => {
+   switch (action.type) {
+      case types.createTask:
+         return {
+            ...state,
+         };
 
-    switch (action.type) {
-        case types.createTask:
-            return {
-                ...state
-            }
+      case types.getTasks:
+         return {
+            ...state,
+            tasks: action.payload.tasks,
+         };
 
-        case types.getTasks:
-            console.log(action.payload.tasks)
-            return {
-                ...state,
-                tasks: action.payload.tasks
-            }
+      case types.getTask:
+          return {
+            ...state,
+            taskUpdated: action.payload
+         };
 
-        default:
-            return state;
-    }
+      case types.deleteTask:
+         return {
+            ...state
+         };
 
-}
+      default:
+         return state;
+   }
+};

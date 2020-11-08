@@ -32,7 +32,7 @@ export const studentsReducer = (state = {}, action) => {
                 ...state,
                 loading: false
             }
-        //   crear mas types para editar el alumnon     
+        //   crear mas types para eliminar el alumnon     
         default:
             return state;
     }

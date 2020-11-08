@@ -35,5 +35,5 @@ export const useForm = (initialState) => {
 
     
 
-    return [student, handleInputChange, handleDateChange, handleinputFile, reset ]
+    return [student, handleInputChange, handleDateChange, handleinputFile, reset,setStudent ]
 }

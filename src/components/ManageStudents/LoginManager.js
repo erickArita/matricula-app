@@ -64,11 +64,14 @@ export const LoginManager = () => {
                 <div className="logo-login">
                     <img src={logo} alt="logo" />
                 </div>
-                <h1>INGRESAR</h1>
+                <h1 className='mt-2' >INGRESAR</h1>
                 {
                     location === "/tasks-login" ?
                         (
-                            <button className='btn btn-primary' onClick={handleGoogleLogIn} >Ingresar con Google</button>
+                            <div className='d-flex justify-content-center mt-5 '>
+
+                                <button className='btn  btn-danger' onClick={handleGoogleLogIn} >Ingresar con Google</button>
+                            </div>
                         ) : (
 
 

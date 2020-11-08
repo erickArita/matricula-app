@@ -39,6 +39,7 @@ export const types = {
 
     createTask:'[Task] createTask' ,
     getTasks:'[get] tasks',
+    getTask:'[get] task',
     deleteTask:'[del] deleteTask',
     completeTask:'[completa] completeTask',
     updateTask:'[upd] updateTask'

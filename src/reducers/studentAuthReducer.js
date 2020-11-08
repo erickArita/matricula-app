@@ -6,6 +6,7 @@ export const studentAuthReducer = (state = {}, action) => {
         case types.loginStudent:
 
             return {
+                ...state,
                 uid: action.payload.uid,
                 name: action.payload.displayName
             }

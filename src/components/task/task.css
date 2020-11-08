@@ -1,28 +1,8 @@
-.form-task {
-   height: 300px;
-  
+.bg {
+  height: 88vh;
+  background: linear-gradient(to right, #f6ffee 0%, #fefff1 100%);
 }
-.bg{
-    height: 88vh;
-    width: 100vw;
-    background:linear-gradient( to right, #f6ffee 0%, #fefff1 100% ) ;
+.scroll {
+  overflow-y: scroll;
+  height: 78vh;
 }
-form input {
-  text-align: center;
-   color: #000000;
-  border: none;
-  font-size: 17px;
-  color: #000000;
-  margin: 10px;
-}
-
- 
-
-form textarea {
-    margin: 10px;
- 
-    
-    
-}
- 
- 
