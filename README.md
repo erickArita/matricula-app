@@ -7,7 +7,7 @@ las tecnologias usadas son:
 - Firebase
 - scss
 <br>
-Puedes verla en producción en el siguiente https://erickarita.github.io/docs/ 
+Puedes verla en producción en el siguiente link https://erickarita.github.io/docs/ 
 
 ## Esctructura
 * homePage
