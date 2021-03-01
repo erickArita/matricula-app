@@ -18,5 +18,5 @@ Puedes verla en producción en el siguiente [link] (https://erickarita.github.io
 >>Estos datos se gurdaran en colecciones de firebase
 * Ingresar como administrador
 >>Debes loguearte como administrador toma una cuenta de prueba
->>>email: admin@admin.com
->>>password: !@#admin1020
+>>email: admin@admin.com
+>>password: !@#admin1020
