@@ -22,3 +22,5 @@ Puedes verla en producción en el siguiente link https://erickarita.github.io/do
 >email: admin@admin.com
 
 >password: !@#admin1020
+una vez loggeado podras ver los registros enviados por los aspirantes
+puedes filtrarlos aceptarlos o reachazarlos
