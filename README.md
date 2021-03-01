@@ -11,7 +11,7 @@ Puedes verla en producción en el siguiente [link] (https://erickarita.github.io
 
 ## Esctructura
 * homePage
->>Se muestra un poco de información del centro educativo
+>Se muestra un poco de información del centro educativo
 
 * formulario para matricula
 >Formularios con todos los campos necesarios para realizar la matricula del alumno
