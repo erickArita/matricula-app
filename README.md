@@ -20,4 +20,5 @@ Puedes verla en producción en el siguiente https://erickarita.github.io/docs/
 >Debes loguearte como administrador toma una cuenta de prueba
 
 >email: admin@admin.com
+
 >password: !@#admin1020
