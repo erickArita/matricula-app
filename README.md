@@ -9,9 +9,9 @@ las tecnologias usadas son:
 <br>
 Puedes verla en producción en el siguiente [link] (https://erickarita.github.io/docs/ "Link")
 
-##Esctructura
+## Esctructura
 * homePage
-Se muestra un poco de información del centro educativo
+>Se muestra un poco de información del centro educativo
 
 * formulario para matricula
 
